@@ -11,6 +11,7 @@ type_of_sudoku = str(sys.argv[2]) #sudoku types to solve
 difficulty = int(sys.argv[3]) #level of difficulty for regular sudokus
 
 def find_regions(borders):
+	#find regions for irregular sudoku puzzles
 	regions = np.zeros((81)).reshape(9,9)
 	regions = regions - 1
 	checked = {(0,0):-1, (0,1):-1, (0,2):-1, (0,3):-1, (0,4):-1, (0,5):-1, (0,6):-1, (0,7):-1, (0,8):-1, (1,0):-1, (1,1):-1, (1,2):-1, (1,3):-1, (1,4):-1, (1,5):-1, (1,6):-1, (1,7):-1, (1,8):-1, (2,0):-1, (2,1):-1, (2,2):-1, (2,3):-1, (2,4):-1, (2,5):-1, (2,6):-1, (2,7):-1, (2,8):-1, (3,0):-1, (3,1):-1, (3,2):-1, (3,3):-1, (3,4):-1, (3,5):-1, (3,6):-1, (3,7):-1, (3,8):-1, (4,0):-1, (4,1):-1, (4,2):-1, (4,3):-1, (4,4):-1, (4,5):-1, (4,6):-1, (4,7):-1, (4,8):-1, (5,0):-1, (5,1):-1, (5,2):-1, (5,3):-1, (5,4):-1, (5,5):-1, (5,6):-1, (5,7):-1, (5,8):-1, (6,0):-1, (6,1):-1, (6,2):-1, (6,3):-1, (6,4):-1, (6,5):-1, (6,6):-1, (6,7):-1, (6,8):-1, (7,0):-1, (7,1):-1, (7,2):-1, (7,3):-1, (7,4):-1, (7,5):-1, (7,6):-1, (7,7):-1, (7,8):-1, (8,0):-1, (8,1):-1, (8,2):-1, (8,3):-1, (8,4):-1, (8,5):-1, (8,6):-1, (8,7):-1, (8,8):-1}
@@ -1133,7 +1134,7 @@ def solve_irregular_puzzles(count, solver, rep_dict, rev_rep_dict):
 			pycosat.solve(clauses, verbose = 1)
 	
 
-'''
+
 #HERE, THE PUZZLES ARE SCRAPED FROM THE WEBSITE
 #WHEN SOLVING THE PUZZLES rather than collecting them, COMMENT THIS PART OUT 
 
@@ -1151,7 +1152,7 @@ get_normal_sudokus_and_regions(5, count) #arg[0] is difficulty, arg[1] is the nu
 #count = 18345 #current irregular count
 #get_sudokus_and_regions(count) #arg[0] is the number of puzzles to be scraped
 
-'''
+
 #dimacs representations starting from 1 instead of 111
 # 1:111 2:112 3:113 and so on
 
@@ -1182,4 +1183,3 @@ elif(type_of_sudoku == "irregular"):
 	#solve irregular sudokus
 	count = 18345 #current irregular count
 	solve_irregular_puzzles(count,solver, rep_dict, rev_rep_dict)
-
