@@ -25,8 +25,6 @@ In the **outputs** folder, you can find example outputs from different solvers a
 
 The executables of the last three solvers are to be put inside "dimacs" folders. The first one is installed through pip.
 
-![img](irregular.png)
-
 <p align="center">
   <img src = "irregular.png" />
 </p>
