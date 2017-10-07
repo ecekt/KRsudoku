@@ -19,7 +19,7 @@ In the **outputs** folder, you can find example outputs from different solvers a
 
 **Solvers utilized:**
 
-*pycosat: 0.6.2
-*zchaff: 2007.3.12
-*ubcsat: UBCSAT version 1.1.0 (Sea to Sky Release) http://www.satlib.org/ubcsat
-*walksat: v51
+* *pycosat: 0.6.2*
+* *zchaff: 2007.3.12*
+* *ubcsat: version 1.1.0 (Sea to Sky Release)*
+* *walksat: v51*
