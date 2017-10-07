@@ -2,7 +2,7 @@
 Sudoku SAT project for Knowledge Representation
 Comparison of stochastic and deterministic SAT solvers in the domain of Regular vs. Irregular Sudoku Puzzles
 
-![Alt text](irregular.pnh?raw=true "Example of an irregular sudoku puzzle")
+![img](irregular.png)
 
 In the **outputs** folder, you can find example outputs from different solvers applied to 2 different types of sudoku puzzles. (Some of them are shortened, as the upload limit was 25 MB).
 
