@@ -23,3 +23,5 @@ In the **outputs** folder, you can find example outputs from different solvers a
 * *zchaff: 2007.3.12*
 * *ubcsat: version 1.1.0 (Sea to Sky Release)*
 * *walksat: v51*
+
+The executables of the last three solvers are to be put inside "dimacs" folders. The first one is installed through pip.
