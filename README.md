@@ -2,8 +2,6 @@
 Sudoku SAT project for Knowledge Representation
 Comparison of stochastic and deterministic SAT solvers in the domain of Regular vs. Irregular Sudoku Puzzles
 
-![img](irregular.png)
-
 In the **outputs** folder, you can find example outputs from different solvers applied to 2 different types of sudoku puzzles. (Some of them are shortened, as the upload limit was 25 MB).
 
 **sudoku_regular** includes examples of regular, classic sudoku puzzles, saved as numpy arrays. Inside, dimacs folder contains the DIMACS representations of these puzzles, after removing some clues to achieve difficulty and preprocessing the literals (Converting 111 to 1 and so on).
@@ -26,3 +24,10 @@ In the **outputs** folder, you can find example outputs from different solvers a
 * *walksat: v51*
 
 The executables of the last three solvers are to be put inside "dimacs" folders. The first one is installed through pip.
+
+![img](irregular.png)
+
+<p align="center">
+  <img src = "irregular.png" />
+</p>
+
