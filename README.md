@@ -2,6 +2,8 @@
 Sudoku SAT project for Knowledge Representation
 Comparison of stochastic and deterministic SAT solvers in the domain of Regular vs. Irregular Sudoku Puzzles
 
+Presentation video: https://www.youtube.com/watch?v=-K-avcHs4VY
+
 **generate_solve.py** is where the most functions are implemented. With this module, it is possible to scrape sudoku puzzles from the website http://www.menneske.no/sudoku/eng/. Both, regular and irregular puzzles are scraped and converted into CNF formats. Irregular boundaries are also obtained through here. Pycosat solver is run within this module.
 
 **main.py** makes shell calls to obtain the printed-out results from each solver. After storing the outputs on disk, this module parses each file according to their format. At the end, certain statistical analyses are applied here along with obtaining histogram plots, means, standard deviations, the results of normality tests, variance tests and t-tests.
