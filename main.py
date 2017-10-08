@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 #THIS PART CREATES THE DIMACS BEFORE SOLVING WITH PYCOSAT
 #FOLLOWING SOLVERS USE THOSE DIMACS FILES AND ARE PROCESSED VIA SHELL ONE BY ONE
 
-'''
 for i in range(1,6):
 	print("Solving regular sudoku puzzles of difficulty " + str(i))
 	proc = subprocess.Popen(["python generate_solve.py pycosat regular " + str(i)],shell = True, stdout = subprocess.PIPE).communicate()
@@ -106,7 +105,6 @@ text_file = open("all_output_zchaff_irregular.txt", "w")
 text_file.write(proc)
 text_file.close()
 
-'''
 def parse_pycosat():
 	values = []
 	

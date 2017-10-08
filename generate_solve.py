@@ -1183,3 +1183,4 @@ elif(type_of_sudoku == "irregular"):
 	#solve irregular sudokus
 	count = 18345 #current irregular count
 	solve_irregular_puzzles(count,solver, rep_dict, rev_rep_dict)
+
