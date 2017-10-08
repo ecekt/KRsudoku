@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 #THIS PART CREATES THE DIMACS BEFORE SOLVING WITH PYCOSAT
 #FOLLOWING SOLVERS USE THOSE DIMACS FILES AND ARE PROCESSED VIA SHELL ONE BY ONE
 
+'''
 for i in range(1,6):
 	print("Solving regular sudoku puzzles of difficulty " + str(i))
 	proc = subprocess.Popen(["python generate_solve.py pycosat regular " + str(i)],shell = True, stdout = subprocess.PIPE).communicate()
@@ -105,6 +106,7 @@ text_file = open("all_output_zchaff_irregular.txt", "w")
 text_file.write(proc)
 text_file.close()
 
+'''
 def parse_pycosat():
 	values = []
 	
@@ -702,7 +704,95 @@ std_num_decisions_zchaff_regular = np.std(zchaff_regular_metrics[1].astype(float
 std_avg_length_trials_walksat_irregular = np.std(walksat_irregular_metrics[0])
 std_avg_length_trials_walksat_regular = np.std(walksat_regular_metrics[0])
 
+res_file = open("pycosat_irregular_learned.csv", "w")
 
+for e in range(0,15000):
+	res_file.write(str(pycosat_irregular_metrics[6][e]) + "\n")
+		
+res_file = open("pycosat_regular_learned.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(pycosat_regular_metrics[6][e]) + "\n")
+
+res_file = open("pycosat_irregular_level.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(pycosat_irregular_metrics[1][e]) + "\n")
+		
+		
+res_file = open("pycosat_regular_level.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(pycosat_regular_metrics[1][e]) + "\n")
+		
+res_file = open("pycosat_irregular_conflicts.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(pycosat_irregular_metrics[5][e]) + "\n")
+		
+		
+res_file = open("pycosat_regular_conflicts.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(pycosat_regular_metrics[5][e]) + "\n")		
+		
+		
+###
+
+
+res_file = open("ubcsat_irregular_steps.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(ubcsat_irregular_metrics[e]) + "\n")
+	
+
+res_file = open("ubcsat_regular_steps.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(ubcsat_regular_metrics[e]) + "\n")
+	
+###
+res_file = open("zchaff_irregular_level.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(zchaff_irregular_metrics[0][e].astype(float)) + "\n")
+		
+		
+res_file = open("zchaff_regular_level.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(zchaff_irregular_metrics[0][e].astype(float)) + "\n")
+	
+	
+
+res_file = open("zchaff_irregular_decisions.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(zchaff_irregular_metrics[1][e].astype(float)) + "\n")
+		
+		
+res_file = open("zchaff_regular_decisions.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(zchaff_irregular_metrics[1][e].astype(float)) + "\n")
+	
+	
+###
+	
+		
+res_file = open("walksat_irregular_avglength.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(walksat_irregular_metrics[0][e]) + "\n")
+		
+		
+res_file = open("walksat_regular_avglength.csv", "w")
+
+for e in range(0,15000):
+	res_file.write(str(walksat_regular_metrics[0][e]) + "\n")
+	
+	
+###
 
 print(std_learned_pycosat_irregular)
 print(std_learned_pycosat_regular)
@@ -794,4 +884,35 @@ print(stats.ttest_ind(zchaff_irregular_metrics[1].astype(float),zchaff_regular_m
 print(stats.levene(walksat_irregular_metrics[0],walksat_regular_metrics[0]))
 print(stats.ttest_ind(walksat_irregular_metrics[0],walksat_regular_metrics[0]))
 
+
+'''
+KstestResult(statistic=0.075965363447865725, pvalue=1.3033473530971269e-75)
+KstestResult(statistic=0.14080118553292936, pvalue=1.0109452140129837e-258)
+KstestResult(statistic=0.028766609968171708, pvalue=3.3070208264513844e-11)
+KstestResult(statistic=0.02709673518868988, pvalue=5.4303651253397432e-10)
+KstestResult(statistic=0.21077063612258454, pvalue=0.0)
+KstestResult(statistic=0.29393692411451966, pvalue=0.0)
+KstestResult(statistic=0.30613108363496166, pvalue=0.0)
+KstestResult(statistic=0.18572647870782211, pvalue=0.0)
+KstestResult(statistic=0.13331680537362667, pvalue=5.4290865898289205e-232)
+KstestResult(statistic=0.034522107831503557, pvalue=5.9371593469280756e-16)
+KstestResult(statistic=0.24950250200731455, pvalue=0.0)
+KstestResult(statistic=0.025929018595601372, pvalue=3.4798627646907861e-09)
+KstestResult(statistic=0.13197117557451604, pvalue=2.4308179717900551e-227)
+KstestResult(statistic=0.1576422818097355, pvalue=0.0)
+LeveneResult(statistic=7790.6504425037328, pvalue=0.0)
+Ttest_indResult(statistic=-121.11490529709558, pvalue=0.0)
+LeveneResult(statistic=405.71768334152733, pvalue=1.2292949884571001e-89)
+Ttest_indResult(statistic=88.334791764162148, pvalue=0.0)
+LeveneResult(statistic=2996.3097640950286, pvalue=0.0)
+Ttest_indResult(statistic=79.054483213678623, pvalue=0.0)
+LeveneResult(statistic=1208.6513473176894, pvalue=1.156480604059433e-259)
+Ttest_indResult(statistic=42.735426211486867, pvalue=0.0)
+LeveneResult(statistic=197.00028386016092, pvalue=1.3053634714879245e-44)
+Ttest_indResult(statistic=92.298180421448677, pvalue=0.0)
+LeveneResult(statistic=2294.6203731955447, pvalue=0.0)
+Ttest_indResult(statistic=69.925388753460027, pvalue=0.0)
+LeveneResult(statistic=3917.2223488272525, pvalue=0.0)
+Ttest_indResult(statistic=95.901447628819056, pvalue=0.0)
+'''
 
